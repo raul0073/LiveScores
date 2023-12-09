@@ -1,0 +1,47 @@
+@import './../../variables.scss';
+
+
+.calender {
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgColor;
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    position: relative;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
+    .day {
+      padding: 0.5rem;
+      height: 2rem;
+      cursor: pointer;
+      color: $grey;
+      transition: color 0.2s ease;
+      &.active {
+        color: $actionColor;
+        text-decoration: underline;
+        text-decoration-color: $headerColor;
+      }
+      &:hover {
+        background-color: $headerColor;
+      }
+    }
+
+    button{
+      position: absolute;
+      left: 0;
+      top: 0;
+      border: none;
+      border-top-left-radius: 1rem;
+      outline: none;
+      background-color: white;
+      color: $headerColor;
+      &.active{
+        color: $actionColor;
+        background-color: $headerColor;
+      }
+    }
+  }

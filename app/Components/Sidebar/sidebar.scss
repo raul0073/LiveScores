@@ -1,0 +1,46 @@
+@import './../../variables.scss';
+
+.sidebar{
+
+    border-right: none;
+    height: 100%;
+    width: 100%;
+    border-top-left-radius: 1rem;
+    padding: .1rem;
+    .header{
+        margin-bottom: 1rem;
+        h3{
+            width: 99%;
+        }
+    }
+    .menu{
+        display: flex;
+        flex-direction: column;
+        ul{
+            list-style: none;
+
+            li{
+                margin: 1.5rem 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                cursor: pointer;
+                @media (max-width: 500px) {
+                    li{
+                        display: none;
+                        img{
+                            display: block;
+                        }
+                    }
+                }
+                color: $actionColor;
+                &:hover{
+                    color: $headerColor;
+                }
+                img{
+                    margin-right:.3rem;
+                }
+            }
+        }
+    }
+}

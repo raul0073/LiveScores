@@ -1,0 +1,42 @@
+@import './../../variables.scss';
+
+.competition-with-matches{
+
+    .competition{
+        border-radius: 1rem;
+        background-color: transparent;
+        padding: .5rem;
+        margin: 1rem 0;
+        display: flex;
+        
+        .comp-logo{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+
+            img{
+                border-radius: 50% 50%;
+            }
+        }
+        .comp-name{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            @media (max-width: 600px) {
+                h2{
+                    font-size: 1rem;
+                }
+              }
+            color: $actionColor;
+
+            .comp-country{
+                color: $headerColor;
+            }
+        }
+    }
+    .matches-list{
+        margin: 1rem 0;
+    }
+}
