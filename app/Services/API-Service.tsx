@@ -1,4 +1,5 @@
 import { LeagueMatches } from "../Types/Types";
+import {API_URL} from process.env
 
 export const getMatches = async (date?): Promise<LeagueMatches | null> => {
   try {
@@ -11,7 +12,7 @@ export const getMatches = async (date?): Promise<LeagueMatches | null> => {
       console.log(date);
     }
 
-    const url = `http://127.0.0.1:3000/api/home/${date}`; // Include date in the URL
+    const url = `${API_URL}/api/home/${date}`; // Include date in the URL
 
     const resp = await fetch(url, {
       method: 'GET',
@@ -33,7 +34,7 @@ export const getMatches = async (date?): Promise<LeagueMatches | null> => {
 
 export const getMatchEvents = async (id: Number): Promise<any | null> => {
     try{
-        const resp = await fetch(`http://127.0.0.1:8080/api/match/${id}`, {
+        const resp = await fetch(`${API_URL}/api/match/${id}`, {
             cache: "no-store",
         });
 
@@ -51,7 +52,7 @@ export const getMatchEvents = async (id: Number): Promise<any | null> => {
 
 export const getLineups = async (fixtureId: string): Promise<any | null> => {
     try {
-        const resp = await fetch(`http://127.0.0.1:8080/api/match/${fixtureId}`, {
+        const resp = await fetch(`${API_URL}/api/match/${fixtureId}`, {
             cache: "no-store",
         });
 
@@ -72,7 +73,7 @@ export const getLineups = async (fixtureId: string): Promise<any | null> => {
 export const getTable = async (id: string): Promise<any | null> => {
     try {
         // Append the date parameter to the URL if it is provided
-        const url = `http://127.0.0.1:8080/api/league/table/${id}`;
+        const url = `${API_URL}/api/league/table/${id}`;
 
         const resp = await fetch(url, {
             cache: "no-store",
